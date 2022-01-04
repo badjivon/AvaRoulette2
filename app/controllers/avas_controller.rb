@@ -1,0 +1,2 @@
+class AvasController < ApplicationController
+end
