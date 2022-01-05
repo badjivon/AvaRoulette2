@@ -1,7 +1,36 @@
-<% @avas.each do |ava| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path ava.photo.key, height: 300, crop: :fill %>')">
-    <%= ava.number %>
-    <%= ava.rare %>
-    <%= ava.batch %>
-  </div>
+<% roulette = rand(1..@avas.length) %>
+<% randava = nil %>
+
+<% while randava == nil %>
+  <% proba = rand(1..500) %>
+  <% if proba > 498 %>
+    <% randava = @avas.find { |ava| ava.number == roulette && ava.rare == "Épique"} %>
+  <% elsif proba <= 400 %>
+    <% randava = @avas.find { |ava| ava.number == roulette && ava.rare == "Commune"} %>
+  <% elsif proba <= 480 %>
+    <% randava = @avas.find { |ava| ava.number == roulette && ava.rare != "Légendaire" && ava.rare != "Épique"} %>
+  <% elsif proba <= 490 %>
+    <% randava = @avas.find { |ava| ava.number == roulette && ava.rare != "Épique" } %>
+  <% else %>
+    <% randava = @avas.find { |ava| ava.number == roulette && ava.rare == "Commune"} %>
+  <% end %>
+  <% break if randava !=nil %>
 <% end %>
+
+
+
+  <%# <% if avafind.rare == "Épique" && proba <= 95 %>
+    <%# <% avafind = @avas.find { |ava| (ava.number == roulette) && (ava.rare != "Épique") && (ava.rare == "Commune" if proba <= 60)} %>
+
+  <%# <% elsif avafind.rare == ("Légendaire" || "Épique") && proba <= 85 %>
+    <%# <% avafind = @avas.find { |ava| (ava.number == roulette) && (ava.rare != ("Légendaire" || "Épique")) && (ava.rare == "Commune" if proba <= 60)} %>
+
+  <%# <% elsif avafind.rare == ("Rare" || "Épique") && (proba <= 60) %>
+    <%# <% avafind = @avas.find { |ava| ava.number == roulette && ava.rare != "Commune"} %>
+  <%# <% end %>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path randava.photo.key, height: 300, crop: :fill %>')">
+      <%= randava.rare %>
+      <%= proba %>
+      <%= roulette %>
+    </div>
