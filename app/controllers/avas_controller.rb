@@ -14,9 +14,15 @@ class AvasController < ApplicationController
   def create
     @ava = Ava.new(ava_params)
     if @ava.save
-      redirect_to avas_path
+      redirect_to roulette_path
     else
       render 'ava/new'
     end
+  end
+
+  private
+
+  def ava_params
+    params.require(:ava).permit(:number, :batch, :photo, :rare)
   end
 end
