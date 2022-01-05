@@ -1,8 +1,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 300px;
-  width: 300px;
+  height: 600px;
+  width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,4 +12,20 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.commune {
+  border: solid white;
+}
+
+.rare {
+  border: solid rgb(45, 168, 101);
+}
+
+.legendaire {
+  border: solid rgb(255, 196, 0);
+}
+
+.epique {
+  border: solid rgb(255, 78, 240);
 }
