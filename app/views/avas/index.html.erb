@@ -1,0 +1,68 @@
+<div class="m-2 mb-4">
+  <h1>COMMUNES</h1>
+  <% commune = @avas.select { |avacommune| avacommune.rare == "commune"} %>
+  <div class="wrapper">
+    <% commune.each do |ava| %>
+      <% if ava.drop > 0 %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path ava.photo.key, height: 300, crop: :fill %>')">
+          <%= ava.drop %>
+        </div>
+      <% else %>
+        <div class="card-collection" style="background-color: black">
+          ?
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="m-2 mb-4">
+  <h1>RARES</h1>
+  <% rare = @avas.select { |avarare| avarare.rare == "rare"} %>
+  <div class="wrapper">
+    <% rare.each do |ava| %>
+      <% if ava.drop > 0 %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path ava.photo.key, height: 300, crop: :fill %>')">
+          <%= ava.drop %>
+        </div>
+      <% else %>
+        <div class="card-collection" style="background-color: black">
+          ?
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="m-2 mb-4">
+  <h1>ÉPIQUES</h1>
+  <% epique = @avas.select { |avaepique| avaepique.rare == "epique"} %>
+  <div class="wrapper">
+    <% epique.each do |ava| %>
+      <% if ava.drop > 0 %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path ava.photo.key, height: 300, crop: :fill %>')">
+          <%= ava.drop %>
+        </div>
+      <% else %>
+        <div class="card-collection" style="background-color: black">
+          ?
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+  <div class="m-2 mb-4">
+  <h1>LÉGENDAIRES</h1>
+  <% legendaire = @avas.select { |avalegendaire| avalegendaire.rare == "legendaire"} %>
+  <div class="wrapper">
+    <% legendaire.each do |ava| %>
+      <% if ava.drop > 0 %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path ava.photo.key, height: 300, crop: :fill %>')">
+          <%= ava.drop %>
+        </div>
+      <% else %>
+        <div class="card-collection" style="background-color: black">
+          ?
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

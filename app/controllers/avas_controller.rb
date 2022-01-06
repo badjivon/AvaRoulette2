@@ -15,7 +15,7 @@ class AvasController < ApplicationController
     @ava = Ava.new(ava_params)
     @ava.drop = 0
     if @ava.save
-      redirect_to roulette_path
+      redirect_to new_ava_path
     else
       render 'ava/new'
     end
