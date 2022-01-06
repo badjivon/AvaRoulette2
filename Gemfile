@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'zeitwerk', '~> 2.4', '>= 2.4.2'
 # Use Active Storage variant
 gem 'net-smtp', require: false
+gem 'net-pop', require: false
+gem 'net-imap', require: false
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
