@@ -44,9 +44,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_231244) do
   end
 
   create_table "avas", force: :cascade do |t|
-    t.integer "number"
     t.string "rare"
-    t.integer "batch"
+    t.integer "drop"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

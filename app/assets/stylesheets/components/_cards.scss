@@ -15,17 +15,17 @@
 }
 
 .commune {
-  border: solid white;
+  border: 7px solid white;
 }
 
 .rare {
-  border: solid rgb(45, 168, 101);
-}
-
-.legendaire {
-  border: solid rgb(255, 196, 0);
+  border: 7px solid #0070dd;
 }
 
 .epique {
-  border: solid rgb(255, 78, 240);
+  border: 7px solid #a335ee;
+}
+
+.legendaire {
+  border: 7px solid #ff8000;
 }

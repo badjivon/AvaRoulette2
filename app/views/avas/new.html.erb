@@ -1,7 +1,5 @@
 <%= simple_form_for(@ava) do |f| %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :number %>
-  <%= f.input :batch %>
-  <%= f.input :rare, collection: ["commune", "rare", "legendaire", "epique"] %>
+  <%= f.input :rare, collection: ["commune", "rare", "epique", "legendaire"] %>
   <%= f.button :submit %>
 <% end %>
