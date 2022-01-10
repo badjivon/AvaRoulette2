@@ -17,6 +17,15 @@
 <% end %>
 
 <% randava.drop += 1 %>
-<% randava.save %>
 
-<div class="m-3 card-category <%= randava.rare %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path randava.photo.key, height: 300, crop: :fill %>')">
+<% if params[:owner] != nil %>
+  <% randava.owner << params[:owner] unless randava.owner.include? "#{params[:owner]}"%>
+  <% randava.save %>
+<% end %>
+
+
+<div class="m-3 card card-roulette <%= randava.rare %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path randava.photo.key, height: 300, crop: :fill %>')">
+  <% if params[:owner] != nil %>
+    <h2 class="mb-2 btn-roulette"><%= params[:owner].upcase %></h2>
+  <% end %>
+</div>

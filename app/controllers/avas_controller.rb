@@ -3,6 +3,14 @@ class AvasController < ApplicationController
     @avas = Ava.all
   end
 
+  def inventaire
+    @avas = Ava.all
+  end
+
+  def show
+    @ava = Ava.find(params[:id])
+  end
+
   def roulette
     @avas = Ava.all
   end
